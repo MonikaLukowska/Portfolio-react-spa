@@ -1,22 +1,18 @@
 import React, { Component } from "react";
+import { HashRouter } from "react-router-dom";
+import Intro from './components/Intro/Intro';
+import Navbar from './components/Navbar/Navbar';
  
 class App extends Component {
   render() {
     return (
-        <header>
-          <nav>
-            <ul className="header">
-              <li><a href="/">Oferta</a></li>
-              <li><a href="/stuff">Portfolio</a></li>
-              <li><a href="/contact">Jak działam</a></li>
-              <li><a href="/contact">O mnie</a></li>
-              <li><a href="/contact">Kontakt</a></li>
-            </ul>
-          </nav>
-          <div className="header__content">
-             
-          </div>
-        </header>
+      <HashRouter>
+          <Navbar />
+          <main class="site-main">
+          <Intro></Intro>
+          </main>
+      </HashRouter>
+        
     );
   }
 }
