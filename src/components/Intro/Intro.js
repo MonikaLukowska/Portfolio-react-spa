@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Section, TextContent, FeaturesList, Feature, Graphic, Heading } from './Intro.styled'
+import { Section, TextContent, FeaturesList, Feature, Graphic, Heading } from './Intro.styled';
+import Button from '../Button/Button'
  
 class Intro extends Component {
   render() {
@@ -14,7 +15,7 @@ class Intro extends Component {
               <Feature order="fourth">Nowoczesna</Feature>
               <Feature order="fifth">Atrakcyjna wizualnie</Feature>
             </FeaturesList>
-            <button className="btn"></button>
+            <Button>Wycena</Button>
           </TextContent>
           <Graphic></Graphic>
         </Section>
