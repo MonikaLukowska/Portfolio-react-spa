@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Section, TextContent, FeaturesList, Feature, Graphic, Heading } from './Intro.styled';
 import Button from '../Button/Button'
  
-class Intro extends Component {
-  render() {
+const Intro = () => {
     return (
         <Section>
           <TextContent>
@@ -21,6 +20,6 @@ class Intro extends Component {
         </Section>
     );
   }
-}
+
  
 export default Intro;
