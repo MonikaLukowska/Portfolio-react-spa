@@ -1,54 +1,59 @@
 import styled from 'styled-components';
-import { NavLink as Link } from 'react-router-dom';
+import { system, color, flexbox, space, position, layout } from 'styled-system';
 
-export const Nav = styled.nav`
-  height:80px;
-  width:100%;
-  display: flex;
-  align-items: center;
-  justify-content:space-between;
-  position:fixed;
-  top:0;
-  left:0;
-  background-color:transparent;
-  z-index:10;
 
-  @media (min-width: ${({ theme }) => theme.desktop }) {
-    height:100px;
-  }
-`
+export const Nav = styled.nav(
+  {
+  width:'100%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent:'space-between',
+  position:'fixed',
+  top:'0',
+  left:'0',
+  zIndex:'10'
+  },
+  layout,
+)
 
-export  const NavMenu = styled.ul`
-  display:flex;
-  flex-direction:column;
-  transition: transform 0.3s ease-in-out;
-  height:100vh;
-  position:absolute;
-  top:0;
-  left:0;
-  transform:translateX(-100%);
-  padding-top: 90px;
 
-  @media screen and (min-width: ${({ theme }) => theme.desktop }) {
-    height:auto;
-    padding:0;
-    width:40%;
-    position:static;
-    transform:translatex(0);
-    flex-direction:row;
-    justify-content:space-between;
-  }
-`
+export  const NavMenu = styled.ul(
+  {
+  display:'flex',
+  transition: 'transform 0.3s ease-in-out',
+  justifyContent:'space-between', 
+  top:'0',
+  left:'0',
+  backgroundColor:'#fff',
+  transform:props  => props.open ? 'translateX(0)' : 'translateX(-100%)'
+},
+system({
+  transform: true
+}),
+flexbox,
+layout,
+position,
+space,
+color
 
-export const NavLink = styled(Link)`
-  color:#ddd;
+)
+
+export const ListItem = styled.li`
+  
   display:flex;
   align-items:center;
-  text-decoration:none;
   margin:1rem 0.5rem;
 
-  &:hover {
-    color:#43e09b;
+  
+
+  a {
+    color:#ddd;
+    text-decoration:none;
+    text-transform:uppercase;
+
+    &:hover {
+      color:#43e09b;
+    }
   }
 `
 
@@ -58,40 +63,40 @@ export const Logo = styled.h1 `
  align-items:center;
 `
 
-export const BurgerIcon = styled.div `
-  width:50px;
-  height:100px;
-  display:flex;
-  align-items:center;
+export const BurgerIcon = styled.div (
+  {
+    width:'50px',
+    height:'100px',
+    display:'flex',
+    alignItems:'center',
 
-  @media screen and (min-width: ${({ theme }) => theme.desktop }) {
-    display:none;
-  }
+    'div':{
+      width:'40px',
+      height:'3px',
+      position:'relative',
+      backgroundColor:'#43e09b',
 
-  div{
-    width:40px;
-    height:3px;
-    position:relative;
-    background-color:#43e09b;
+      '&:before': {
+        content:'""',
+        display:'block',
+        width:'50%',
+        height:'100%',
+        backgroundColor:'#43e09b',
+        position:'absolute',
+        top:'-8px',
+        transform:props  => props.open ? 'translateX(-10px)' : 'translateX(0)'
+      },
 
-    &:after {
-      content:"";
-      display:block;
-      width:100%;
-      height:100%;
-      background-color:#43e09b;
-      position:absolute;
-      top:-8px;
+      '&:after': {
+        content:'""',
+        display:'block',
+        width:'80%',
+        height:'100%',
+        backgroundColor:'#43e09b',
+        position:'absolute',
+        bottom:'-8px'
+      }
     }
-
-    &:before{
-      content:"";
-      display:block;
-      width:100%;
-      height:100%;
-      background-color:#43e09b;
-      position:absolute;
-      bottom:-8px;
-    }
   }
-`
+)
+ 

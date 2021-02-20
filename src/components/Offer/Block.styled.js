@@ -1,23 +1,15 @@
-import  styled, { css } from 'styled-components';
+import  styled from 'styled-components';
+import { border, layout } from 'styled-system';
 
-export const StyledBlock = styled.div`
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-
-  @media screen and (min-width: ${({ theme }) => theme.desktopM}) {
-    width:50%
-    ${props => props.border === "topLeft" && css `
-      porder-top:solid 1px ${({ theme }) => theme.blue };
-      border-left: solid 1px ${({ theme }) => theme.blue };
-    `}
-    ${props => props.border === "bottomRight" && css `
-      porder-bottom:solid 1px ${({ theme }) => theme.blue };
-      border-right: solid 1px ${({ theme }) => theme.blue };
-    `}
-
-  };
-`
+export const StyledBlock = styled.div(
+  {
+  textAlign:'center',
+  display:'flex',
+  flexDirection:'column',
+  },
+  layout,
+  border,
+)
 
 export const Icon = styled.div`
   margin:0 auto;

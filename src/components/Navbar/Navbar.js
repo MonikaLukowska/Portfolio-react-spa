@@ -1,20 +1,17 @@
-import React from 'react';
-import { Nav, Logo, BurgerIcon, NavMenu, NavLink } from './Navbar.styled';
+import React, { useState } from 'react';
+import { Nav, Logo} from './Navbar.styled';
+import Burger from './Burger';
+import Menu from './Menu';
+
+
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
-       <Nav>
+       <Nav height={{_:'80px', sm:'100px'}}>
          <Logo >Logo</Logo>    
-         <NavMenu>
-             <NavLink to='/oferta'>Oferta</NavLink>
-             <NavLink to="/portfolio">Portfolio</NavLink>
-             <NavLink to="/proces">Jak działam</NavLink>
-             <NavLink to="/about">O mnie</NavLink>
-             <NavLink to='/contact'>Kontakt</NavLink>
-         </NavMenu> 
-         <BurgerIcon>
-          <div></div>
-        </BurgerIcon> 
+         <Menu open={open} setOpen={setOpen} />
+         <Burger open={open} setOpen={setOpen} />
        </Nav>
   )
 }

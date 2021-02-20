@@ -3,7 +3,12 @@ import {Icon, StyledBlock} from './Block.styled.js'
 
 const Block = (props) => {
   return (
-  <StyledBlock>
+  <StyledBlock 
+    width={{md: 1 / 2}} 
+    borderTop={props.borderTop} 
+    borderBottom={props.borderBottom} 
+    borderLeft={props.borderLeft} 
+    borderRight={props.borderRight}>
     <Icon>
       <img src={props.icon} alt="" role="presentation" />
     </Icon>
