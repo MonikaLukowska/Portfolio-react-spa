@@ -66,35 +66,43 @@ export const Logo = styled.h1 `
 export const BurgerIcon = styled.div (
   {
     width:'50px',
-    height:'100px',
+    height:'130px',
     display:'flex',
     alignItems:'center',
 
     'div':{
       width:'40px',
-      height:'3px',
+      height:'4px',
       position:'relative',
       backgroundColor:'#43e09b',
+      transition: '.4s  cubic-bezier(0.68, -0.6, 0.32, 1.6)',
+      transform:props  => props.open ? 'translate(0px,-11px) rotatez(-45deg)' : 'rotatez(0) translate(0)',
 
       '&:before': {
         content:'""',
         display:'block',
-        width:'50%',
+        width:props  => props.open ? '100%' : '50%',
         height:'100%',
         backgroundColor:'#43e09b',
         position:'absolute',
-        top:'-8px',
-        transform:props  => props.open ? 'translateX(-10px)' : 'translateX(0)'
+        top:'-10px',
+        transition: '.4s  cubic-bezier(0.68, -0.6, 0.32, 1.6)',
+        transform:props  => props.open ? 'rotatez(90deg) translate(8px,1px)' : 'rotatez(0) translate(0)',
+        transformOrigin:'bottom'
+       
       },
 
       '&:after': {
         content:'""',
         display:'block',
-        width:'80%',
+        width:props  => props.open ? '100%' : '80%',
         height:'100%',
         backgroundColor:'#43e09b',
         position:'absolute',
-        bottom:'-8px'
+        bottom:'-10px',
+        transition: '.4s  cubic-bezier(0.68, -0.6, 0.32, 1.6)',
+        transform:props  => props.open ? 'translate(-1px,-9px) rotatez(90deg)' : 'rotatez(0) translate(0)',
+        transformOrigin:'bottom'
       }
     }
   }
