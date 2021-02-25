@@ -8,12 +8,15 @@ export const Nav = styled.nav(
   display: 'flex',
   alignItems: 'center',
   justifyContent:'space-between',
-  position:'fixed',
+  position:'absolute',
   top:'0',
-  left:'0',
+  left:'50%',
+  transform:'translateX(-50%)',
+  padding:'1rem',
   zIndex:'10'
   },
   layout,
+  space
 )
 
 
@@ -50,6 +53,8 @@ export const ListItem = styled.li`
     color:#ddd;
     text-decoration:none;
     text-transform:uppercase;
+    font-family:"Epilogue-Regular";
+    letter-spacing:1px;
 
     &:hover {
       color:#43e09b;
@@ -105,6 +110,9 @@ export const BurgerIcon = styled.div (
         transformOrigin:'bottom'
       }
     }
-  }
+  },
+  layout
 )
+
+
  

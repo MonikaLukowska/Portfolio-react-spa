@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.68" height="38.68" viewBox="0 0 38.68 38.68">
+  <g id="Elipsa_4_kopia_5" data-name="Elipsa 4 kopia 5" fill="none" stroke="#f36361" stroke-width="1">
+    <circle cx="19.34" cy="19.34" r="19.34" stroke="none"/>
+    <circle cx="19.34" cy="19.34" r="18.84" fill="none"/>
+    <animate
+       attributeName="cx" from="0" to="19.34"
+       dur="2s"  />
+  </g>
+</svg>

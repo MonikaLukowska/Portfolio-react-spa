@@ -1,10 +1,11 @@
 import React from "react";
 import Block from './Block';
 import FlexBox from '../FlexBox/FlexBox'
+import Section from '../Section/Section'
 
 const Offer = () => {
   return (
-    <section id="offer" >
+    <Section id="offer" p={{md:2}}>
       <h2 className="site-header site-header--medium">Oferta</h2>
       <FlexBox 
         justifyContent="space-between"
@@ -35,7 +36,7 @@ const Offer = () => {
           content="Opieka nad stroną bywa czasochłonna i kłopotliwa, a na pewno wolałbyś skupić się na prowadzeniu biznesu. Oferuję Ci usługę administracji strony, w skład której wchodzą wszelkie aktualizacje, wprowadzanie zmian oraz aktualizacja treści."
         />
       </FlexBox>
-    </section>
+    </Section>
   )
 }
 

@@ -4,7 +4,7 @@ import { bool, func } from 'prop-types';
 
 const Burger = ({ open, setOpen }) => {
   return (
-    <BurgerIcon open={open} onClick={() => setOpen(!open)}>
+    <BurgerIcon open={open} onClick={() => setOpen(!open)} display={{sm:'none'}}>
       <div></div>
     </BurgerIcon>
   )

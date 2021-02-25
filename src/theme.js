@@ -13,7 +13,7 @@ export default {
     blue: '#0f18a3',
     yellow: '#FFC300',
   },
-  
   breakpoints,
+  space:[41,53, 85]
   
 }
